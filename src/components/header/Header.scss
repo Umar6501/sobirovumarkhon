@@ -1,0 +1,89 @@
+header {
+  margin: 20px 0px;
+  .container {
+    img {
+      height: 900px;
+    }
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      .logo {
+        display: flex;
+        flex-direction: row;
+        gap: 3px;
+        align-items: center;
+
+        p {
+          color: aliceblue;
+          font-size: 20px;
+          font-weight: 400;
+          animation-name: cc;
+          animation-direction: normal;
+          animation-duration: 3.6s;
+          animation-iteration-count: infinite;
+        }
+        .anm-logo {
+          width: 300px;
+          height: 40px;
+
+          position: absolute;
+
+          padding-left: 19px;
+          animation-name: identifier;
+          animation-direction: normal;
+          animation-duration: 3.6s;
+          animation-iteration-count: infinite;
+
+          color: whitesmoke;
+          font-size: 25px;
+          font-weight: 400;
+        }
+        .top {
+          position: absolute;
+          background: #c3c3c3;
+          width: 300px;
+          height: 30px;
+          transform: translateY(-32px);
+        }
+        .bottom {
+          position: absolute;
+          background: #c3c3c3;
+          width: 300px;
+          height: 30px;
+          transform: translateY(32px);
+        }
+      }
+    }
+  }
+}
+
+//ANIMATION Sobirov Umarkhon
+@keyframes identifier {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-38px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+//ANIMATION for ©
+@keyframes cc {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-90deg);
+  }
+  58% {
+    transform: rotate(0deg);
+  }
+  85% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
