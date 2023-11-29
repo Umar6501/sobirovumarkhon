@@ -1,16 +1,20 @@
-import Header from "./components/header/Header";
-import "./App.css";
-// import Footer from "./components/footer/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Hero from "./pages/home/Home";
+import { Suspense, lazy } from "react";
+import "./App.css";
+import Load from "./components/loader/Load";
+const Header = lazy(() => import("./components/header/Header"));
+const Hero = lazy(() => import("./pages/home/Home"));
+// const Load = lazy(() => import("./components/loader/Load"));
+
 function App() {
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Hero />} />
-      </Routes>
-      {/* <Footer /> */}
+      <Suspense fallback={<Load />}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+        </Routes>
+      </Suspense>
     </Router>
   );
 }
