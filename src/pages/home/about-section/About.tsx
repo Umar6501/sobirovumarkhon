@@ -1,6 +1,7 @@
+import "./About.scss";
 const About = () => {
   return (
-    <div>
+    <section className="about-section">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda culpa
       tempora animi, enim eaque alias quidem quas, excepturi odio tempore eos
       est cupiditate, illo nisi dignissimos! Ex nesciunt sunt cumque,
@@ -80,7 +81,7 @@ const About = () => {
       nisi nesciunt voluptatibus. Consequuntur hic voluptas necessitatibus
       dolore dolor impedit laborum eligendi aperiam, error repellat voluptates
       sed nobis.
-    </div>
+    </section>
   );
 };
 

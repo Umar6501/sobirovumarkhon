@@ -1,13 +1,11 @@
 import { useState } from "react";
 import "./Header.scss";
-import "./Header1.scss";
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
   //
   const [cursorX, setCursorX] = useState<number | undefined>();
   const [cursorY, setCursorY] = useState<number | undefined>();
-
   //
   const changeMenu = () => {
     if (window.scrollY >= 2) {
@@ -22,6 +20,9 @@ const Header = () => {
     setCursorX(e.clientX);
     setCursorY(e.clientY);
   });
+  //
+  const [active, setActive] = useState(false);
+
   return (
     <header>
       <div className="container">
@@ -37,7 +38,7 @@ const Header = () => {
             <p>About</p>
             <p>Contact</p>
           </div>
-          <div className={menu ? "menu" : ""}>
+          <div className={menu ? "menu" : "menu2"}>
             <div className="submenu">
               <div
                 className="line"
@@ -45,11 +46,18 @@ const Header = () => {
                   left: cursorX + "px",
                   top: cursorY + "px",
                 }}
+                onClick={() => setActive(!active)}
               >
-                <span className="line1"></span>
-                <span className="line1"></span>
+                <span className={active ? "line1" : "line3"}></span>
+                <span className={active ? "line2" : "line3"}></span>
                 <div className="linebg"></div>
               </div>
+              <div className={active ? "submenubg" : "submenubg2"}></div>
+            </div>
+          </div>
+          <div className={menu ? "menubg" : "menubg2"}>
+            <div className={active ? "menu-item" : "menu-item2"}>
+              <div className={active ? "menu-content" : "menu-content2"}></div>
             </div>
           </div>
         </div>

@@ -1,70 +1,91 @@
+/* Header Styles */
 header {
   .container {
     margin-bottom: 300px;
+
     img {
       height: 900px;
     }
+
     .header-content {
       display: flex;
       flex-direction: column;
+
+      /* Logo Styles */
       .logo {
         margin-top: 20px;
         display: flex;
         flex-direction: row;
         gap: 3px;
         align-items: center;
+
         &:hover {
           p {
             animation: none;
           }
         }
+
         p {
+          /* Animation for © */
           color: aliceblue;
           font-size: 20px;
           font-weight: 400;
-          animation-name: cc;
-          animation-direction: normal;
-          animation-duration: 3.6s;
-          animation-iteration-count: infinite;
+          animation: © 3.6s infinite;
         }
+
         .anm-logo {
           width: 300px;
           height: 40px;
 
-          position: absolute;
-
-          padding-left: 19px;
+          /* Animation for logo */
           animation: identifier 3.6s infinite linear;
-          animation-name: identifier;
+          transition: 5s ease;
 
+          /* Position Style */
+          transform: translateY(0px);
+          position: absolute;
+          padding-left: 19px;
+
+          /* Other styles... */
+          z-index: -2;
           color: whitesmoke;
           font-size: 25px;
           font-weight: 400;
-          transition: 5s ease;
-          transform: translateY(0px);
 
           &:hover {
             animation: none;
             transform: translateY(-38px);
           }
         }
+
         .top {
-          position: absolute;
-          background: #c3c3c3;
           width: 300px;
           height: 30px;
+
+          /* Position Style */
+          position: absolute;
           transform: translateY(-32px);
-          z-index: 1;
-        }
-        .bottom {
-          position: absolute;
+
+          /* Other styles... */
           background: #c3c3c3;
+          z-index: -1;
+        }
+
+        .bottom {
           width: 300px;
           height: 30px;
+
+          /* Position Style */
+          position: absolute;
           transform: translateY(32px);
-          z-index: 1;
+
+          /* Other styles... */
+          background: #c3c3c3;
+          z-index: -1;
         }
       }
+
+      /* Navbar Styles */
       .navbar {
         display: flex;
         align-items: center;
@@ -72,13 +93,133 @@ header {
         margin-top: -20px;
         gap: 27px;
       }
-      .menu {
-        position: absolute;
+
+      /* Menu Styles */
+
+      /* setMenu ( Fasle )*/
+      .menu2 {
+        width: 90px;
+        height: 90px;
+
+        /* Position Style */
+        position: fixed;
         right: 40px;
-        margin-top: 90px;
+        margin-top: 70px;
+        transform: translateY(-200px);
+
+        /* Animation Style */
+        transition: all 1s ease;
+        border-radius: 50%;
+
+        /* Others Style */
+        z-index: 100;
+        overflow: hidden;
+
+        background: rgba(141, 141, 141, 0.5);
+        &:hover {
+          .submenu {
+            overflow: hidden;
+            .line {
+              width: 90px;
+              height: 90px;
+              border-radius: 50%;
+              position: fixed;
+              transform: translateX(-1435px) translateY(-103px);
+
+              .linebg {
+                border-radius: 500%;
+                width: 180px;
+                height: 180px;
+                transform: translateY(0px) translateX(0px);
+                transition: all 2.23s ease;
+                background: blue;
+              }
+            }
+          }
+        }
+        .submenu {
+          width: 90px;
+          height: 90px;
+          transform: translateX(0px) translateY(-0px);
+          border-radius: 50%;
+          background: #000;
+          z-index: -1;
+          .line {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(38px) translateX(0px);
+            gap: 10px;
+            transition: all 0.23s ease;
+            top: none;
+            left: none;
+            .line1 {
+              width: 40px;
+              height: 3px;
+              transition: all 0.23s ease;
+
+              background: #ffffff;
+              transform: rotate(45deg) translateX(3px) translateY(2px);
+            }
+            .line3 {
+              transition: all 0.23s ease;
+
+              width: 40px;
+              height: 3px;
+              background: #ffffff;
+            }
+            .line2 {
+              transition: all 0.23s ease;
+
+              width: 40px;
+              height: 3px;
+              background: #ffffff;
+              transform: rotate(-45deg) translateX(7px) translateY(-6px);
+            }
+          }
+          .linebg {
+            transition: all 0.23s ease;
+
+            border-radius: 50%;
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            transform: translateY(0px) translateX(0px);
+            z-index: -1;
+            background: blue;
+          }
+          .linebg2 {
+            transition: all 0.23s ease;
+
+            border-radius: 50%;
+            position: absolute;
+            width: 12px;
+            height: 120px;
+            transform: translateY(0px) translateX(0px);
+            z-index: 100;
+            background: blue;
+          }
+          // .submenubg2 {
+          //   width: 90px;
+          //   height: 90px;
+          //   transform: translateX(0px) translateY(-0px);
+          //   border-radius: 50%;
+          //   background: #a46a6a;
+          // }
+        }
+      }
+
+      /* setMenu ( true )*/
+      .menu {
+        position: fixed;
+        transition: all 1s ease;
+        right: 40px;
+        margin-top: 70px;
         width: 90px;
         height: 90px;
         border-radius: 50%;
+        z-index: 100;
         // overflow: h2idden;
         overflow: hidden;
 
@@ -92,13 +233,14 @@ header {
               border-radius: 50%;
               position: fixed;
               transform: translateX(-1435px) translateY(-103px);
+
               .linebg {
                 border-radius: 500%;
                 width: 180px;
                 height: 180px;
                 transform: translateY(0px) translateX(0px);
                 transition: background-color 2.23s ease;
-                background: blue;
+                background-color: blue;
               }
             }
           }
@@ -122,12 +264,29 @@ header {
             .line1 {
               width: 40px;
               height: 3px;
+              transition: all 0.23s ease;
+
               background: #ffffff;
+              transform: rotate(45deg) translateX(3px) translateY(2px);
+            }
+            .line3 {
+              transition: all 0.23s ease;
+
+              width: 40px;
+              height: 3px;
+              background: #ffffff;
+            }
+            .line2 {
+              transition: all 0.23s ease;
+
+              width: 40px;
+              height: 3px;
+              background: #ffffff;
+              transform: rotate(-45deg) translateX(7px) translateY(-6px);
             }
           }
           .linebg {
             transition: all 0.23s ease;
-
             border-radius: 50%;
             position: absolute;
             width: 0px;
@@ -136,6 +295,83 @@ header {
             z-index: -1;
             background: blue;
           }
+          .submenubg {
+            position: fixed;
+            transition: all 1s ease;
+            right: 0px;
+            margin-top: -5px;
+
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            z-index: 100;
+            // overflow: h2idden;
+            overflow: hidden;
+            transform: translateX(50px) translateY(-40px);
+            background: rgb(0, 0, 255);
+            z-index: -1;
+          }
+          .submenubg2 {
+            position: fixed;
+            transition: all 1s ease;
+            right: 0px;
+            margin-top: -15px;
+
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            z-index: 100;
+            // overflow: h2idden;
+            overflow: hidden;
+
+            background: transparent;
+            z-index: -1;
+          }
+        }
+      }
+
+      /* Menu bg*/
+      .menubg {
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        .menu-item {
+          transition: all 1s ease;
+
+          position: fixed;
+          width: 40%;
+          height: 110vh;
+          background-color: rgba(0, 0, 0);
+          right: 0;
+          top: 0;
+          bottom: 0;
+          border-radius: 0%;
+          z-index: 20;
+          transform: translateX(0px);
+          overflow: hidden;
+          z-index: 1;
+          pointer-events: none;
+          mix-blend-mode: blending;
+        }
+      }
+      .menubg2 {
+        transform: translateX(0px);
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        .menu-item2 {
+          transition: all 1.2s ease;
+          position: fixed;
+          width: 40%;
+          height: 100vh;
+          transform: translateX(900px);
+          background-color: transparent;
+          right: 0;
+          top: 0px;
+          bottom: 0;
+          scroll-behavior: smooth scroll;
         }
       }
     }
@@ -166,7 +402,7 @@ header {
   }
 }
 //ANIMATION for ©
-@keyframes cc {
+@keyframes © {
   0% {
     transform: rotate(0deg);
   }
