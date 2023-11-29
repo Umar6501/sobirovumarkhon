@@ -1,6 +1,6 @@
 header {
-  margin: 20px 0px;
   .container {
+    margin-bottom: 300px;
     img {
       height: 900px;
     }
@@ -8,11 +8,16 @@ header {
       display: flex;
       flex-direction: column;
       .logo {
+        margin-top: 20px;
         display: flex;
         flex-direction: row;
         gap: 3px;
         align-items: center;
-
+        &:hover {
+          p {
+            animation: none;
+          }
+        }
         p {
           color: aliceblue;
           font-size: 20px;
@@ -29,14 +34,19 @@ header {
           position: absolute;
 
           padding-left: 19px;
+          animation: identifier 3.6s infinite linear;
           animation-name: identifier;
-          animation-direction: normal;
-          animation-duration: 3.6s;
-          animation-iteration-count: infinite;
 
           color: whitesmoke;
           font-size: 25px;
           font-weight: 400;
+          transition: 5s ease;
+          transform: translateY(0px);
+
+          &:hover {
+            animation: none;
+            transform: translateY(-38px);
+          }
         }
         .top {
           position: absolute;
@@ -53,6 +63,79 @@ header {
           transform: translateY(32px);
         }
       }
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: -20px;
+        gap: 27px;
+      }
+      .menu {
+        position: absolute;
+        right: 40px;
+        margin-top: 90px;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        // overflow: h2idden;
+        overflow: hidden;
+
+        background: rgba(141, 141, 141, 0.5);
+        &:hover {
+          .submenu {
+            overflow: hidden;
+            .line {
+              width: 90px;
+              height: 90px;
+              border-radius: 50%;
+              position: fixed;
+              transform: translateX(-1435px) translateY(-103px);
+              .linebg {
+                border-radius: 500%;
+                width: 180px;
+                height: 180px;
+                transform: translateY(0px) translateX(0px);
+                transition: background-color 2.23s ease;
+                background: blue;
+              }
+            }
+          }
+        }
+        .submenu {
+          width: 90px;
+          height: 90px;
+          transform: translateX(0px) translateY(-0px);
+          border-radius: 50%;
+          background: #000;
+          .line {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(38px) translateX(0px);
+            gap: 10px;
+            transition: all 0.23s ease;
+            top: none;
+            left: none;
+            .line1 {
+              width: 40px;
+              height: 3px;
+              background: #ffffff;
+            }
+          }
+          .linebg {
+            transition: all 0.23s ease;
+
+            border-radius: 50%;
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            transform: translateY(0px) translateX(0px);
+            z-index: -1;
+            background: blue;
+          }
+        }
+      }
     }
   }
 }
@@ -67,6 +150,17 @@ header {
   }
   100% {
     transform: translateY(0px);
+  }
+}
+@keyframes identifier2 {
+  0% {
+    transform: translateY(-38px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-38px);
   }
 }
 //ANIMATION for ©
