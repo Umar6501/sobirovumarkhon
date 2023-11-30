@@ -26,3 +26,13 @@ p,
 a {
   font-family: "Poppins", sans-serif;
 }
+
+@media (max-width: 721px) {
+  body {
+    overflow: auto;
+  }
+  .container {
+    max-width: 700px;
+    padding: 0;
+  }
+}

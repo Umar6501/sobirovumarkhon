@@ -57,8 +57,20 @@ const Header = () => {
           </div>
           <div className={menu ? "menubg" : "menubg2"}>
             <div className={active ? "menu-item" : "menu-item2"}>
-              <div className={active ? "menu-content" : "menu-content2"}></div>
+              {/* <div className={active ? "menu-content" : "menu-content2"}></div> */}
             </div>
+          </div>
+          <div>
+            <div
+              className={active ? "menu-div-bg" : "menu-div-bg2"}
+              style={
+                menu
+                  ? active
+                    ? { backgroundColor: "rgba(0, 0, 0, 0.2)" }
+                    : { backgroundColor: "transparent" }
+                  : { backgroundColor: "transparent" }
+              }
+            ></div>
           </div>
         </div>
       </div>

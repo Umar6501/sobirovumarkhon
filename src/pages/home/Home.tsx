@@ -5,6 +5,8 @@ const Home = () => {
     <main>
       <Hero />
       <About />
+      <About />
+      <About />
     </main>
   );
 };
