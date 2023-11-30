@@ -55,12 +55,13 @@ const Header = () => {
               <div className={active ? "submenubg" : "submenubg2"}></div>
             </div>
           </div>
-          <div className={menu ? "menubg" : "menubg2"}>
-            <div className={active ? "menu-item" : "menu-item2"}>
-              {/* <div className={active ? "menu-content" : "menu-content2"}></div> */}
-            </div>
+          <div
+            className={menu ? "menubg" : "menubg2"}
+            style={menu ? { top: "0%" } : { top: "-100%" }}
+          >
+            <div className={active ? "menu-item" : "menu-item2"}></div>
           </div>
-          <div>
+          <div className="bg-menu">
             <div
               className={active ? "menu-div-bg" : "menu-div-bg2"}
               style={

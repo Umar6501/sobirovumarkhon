@@ -155,7 +155,7 @@ header {
             top: none;
             left: none;
             .line1 {
-              width: 40px;
+              width: 24px;
               height: 3px;
               transition: all 0.23s ease;
 
@@ -165,14 +165,14 @@ header {
             .line3 {
               transition: all 0.23s ease;
 
-              width: 40px;
+              width: 34px;
               height: 3px;
               background: #ffffff;
             }
             .line2 {
               transition: all 0.23s ease;
 
-              width: 40px;
+              width: 24px;
               height: 3px;
               background: #ffffff;
               transform: rotate(-45deg) translateX(7px) translateY(-6px);
@@ -262,7 +262,7 @@ header {
             top: none;
             left: none;
             .line1 {
-              width: 40px;
+              width: 24px;
               height: 3px;
               transition: all 0.23s ease;
 
@@ -272,14 +272,14 @@ header {
             .line3 {
               transition: all 0.23s ease;
 
-              width: 40px;
+              width: 34px;
               height: 3px;
               background: #ffffff;
             }
             .line2 {
               transition: all 0.23s ease;
 
-              width: 40px;
+              width: 24px;
               height: 3px;
               background: #ffffff;
               transform: rotate(-45deg) translateX(7px) translateY(-6px);
@@ -333,14 +333,13 @@ header {
       /* Menu bg*/
       .menubg {
         position: fixed;
-        top: -100%;
         right: 0;
         bottom: 0;
         width: 100%;
-        transition: all 1s ease;
-
+        transition: all 0.4s ease;
+        transform: translateY(0px);
         .menu-item {
-          transition: all 1s ease;
+          transition: all 0.8s ease;
           position: fixed;
           width: 40%;
           height: 110vh;
@@ -355,17 +354,18 @@ header {
       }
       .menubg2 {
         position: fixed;
-        top: 0%;
         right: 0;
         bottom: 0;
         width: 40%;
-        transition: all 2s ease;
+        transition: all 0.2s ease;
+        transform: translateY(-200px);
+
         .menu-item2 {
-          transition: all 2s ease;
+          transition: all 0.2s ease;
           position: fixed;
           width: 40%;
           height: 110vh;
-          background-color: black;
+          background-color: transparent;
           right: 0;
           top: 0;
           bottom: 0;
@@ -376,7 +376,6 @@ header {
       }
 
       /*Menu-div-bg*/
-
       .menu-div-bg {
         transition: all 1s ease;
 
